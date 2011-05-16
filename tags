@@ -1,0 +1,224 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+BackgroundWorker	app/src/revelation/mobile/util/BackgroundWorker.java	/^  public BackgroundWorker(Runnable onTickHandler) $/;"	m	class:BackgroundWorker
+BackgroundWorker	app/src/revelation/mobile/util/BackgroundWorker.java	/^public class BackgroundWorker { $/;"	c
+CHECK_INTERVAL	app/src/revelation/mobile/util/JsLayer.java	/^  final static int CHECK_INTERVAL=10;$/;"	f	class:JsLayer
+CountingMultipartEntity	app/src/revelation/mobile/util/CountingMultipartEntity.java	/^    public CountingMultipartEntity(HttpMultipartMode mode, final String boundary,$/;"	m	class:CountingMultipartEntity
+CountingMultipartEntity	app/src/revelation/mobile/util/CountingMultipartEntity.java	/^    public CountingMultipartEntity(final HttpMultipartMode mode, final ProgressListener listener) {$/;"	m	class:CountingMultipartEntity
+CountingMultipartEntity	app/src/revelation/mobile/util/CountingMultipartEntity.java	/^    public CountingMultipartEntity(final ProgressListener listener) {$/;"	m	class:CountingMultipartEntity
+CountingMultipartEntity	app/src/revelation/mobile/util/CountingMultipartEntity.java	/^public class CountingMultipartEntity extends MultipartEntity {$/;"	c
+CountingOutputStream	app/src/revelation/mobile/util/CountingMultipartEntity.java	/^        public CountingOutputStream(final OutputStream out,$/;"	m	class:CountingMultipartEntity.CountingOutputStream
+CountingOutputStream	app/src/revelation/mobile/util/CountingMultipartEntity.java	/^    public static class CountingOutputStream extends FilterOutputStream {$/;"	c	class:CountingMultipartEntity
+FINISH_PHOTO_UPLOAD	app/src/revelation/mobile/MainActivity.java	/^		private final int FINISH_PHOTO_UPLOAD = 3;$/;"	f	class:MainActivity.UploadImageTask	file:
+HEADER_SIZE	test/coloredlogcat.py	/^HEADER_SIZE = TAGTYPE_WIDTH + 1 + TAG_WIDTH + 1 + PROCESS_WIDTH + 1$/;"	v
+Interceptor	app/src/revelation/mobile/util/Interceptor.java	/^public class Interceptor {$/;"	c
+InterfaceHelper	test/src/revelation/mobile/InterfaceHelper.java	/^public class InterfaceHelper{$/;"	c
+JS_LAYER_NAME	app/src/revelation/mobile/util/JsLayer.java	/^	final static String JS_LAYER_NAME = "$android$jsLayer";$/;"	f	class:JsLayer
+JsLayer	app/src/revelation/mobile/util/JsLayer.java	/^  public JsLayer(WebView webView){$/;"	m	class:JsLayer
+JsLayer	app/src/revelation/mobile/util/JsLayer.java	/^public final class JsLayer {$/;"	c
+KNOWN_TAGS	test/coloredlogcat.py	/^KNOWN_TAGS = {$/;"	v
+LAST_USED	test/coloredlogcat.py	/^LAST_USED = [RED,GREEN,YELLOW,BLUE,MAGENTA,CYAN,WHITE]$/;"	v
+MAX_WAIT_TIME	app/src/revelation/mobile/util/JsLayer.java	/^	final static int MAX_WAIT_TIME=1000;$/;"	f	class:JsLayer
+MENU_CANCEL	app/src/revelation/mobile/MainActivity.java	/^	final int MENU_CANCEL = 3;$/;"	f	class:MainActivity
+MENU_GET_LOCAL_IMAGE	app/src/revelation/mobile/MainActivity.java	/^	final int MENU_GET_LOCAL_IMAGE = 2;$/;"	f	class:MainActivity
+MENU_OPEN_CAMERA	app/src/revelation/mobile/MainActivity.java	/^	final int MENU_OPEN_CAMERA = 1;$/;"	f	class:MainActivity
+MainActivity	app/src/revelation/mobile/MainActivity.java	/^public class MainActivity extends RoboActivity {$/;"	c
+MainActivityTest	test/src/revelation/mobile/MainActivityTest.java	/^	public MainActivityTest() {$/;"	m	class:MainActivityTest
+MainActivityTest	test/src/revelation/mobile/MainActivityTest.java	/^public class MainActivityTest extends$/;"	c
+NetHelper	app/src/revelation/mobile/util/NetHelper.java	/^public class NetHelper{$/;"	c
+NetHelperTest	test/src/revelation/mobile/util/NetHelperTest.java	/^public class NetHelperTest extends TestCase{$/;"	c
+PROCESS_WIDTH	test/coloredlogcat.py	/^PROCESS_WIDTH = 8 # 8 or -1$/;"	v
+ProgressListener	app/src/revelation/mobile/util/CountingMultipartEntity.java	/^    public static interface ProgressListener {$/;"	i	class:CountingMultipartEntity
+R	app/gen/revelation/mobile/R.java	/^public final class R {$/;"	c
+RULES	test/coloredlogcat.py	/^RULES = {$/;"	v
+Reflector	test/src/revelation/mobile/Reflector.java	/^class Reflector{$/;"	c
+ResourceHelper	app/src/revelation/mobile/ResourceHelper.java	/^public class ResourceHelper{$/;"	c
+ResourceHelperTest	test/src/revelation/mobile/ResourceHelperTest.java	/^public class ResourceHelperTest extends TestCase{$/;"	c
+RevelationApplication	app/src/revelation/mobile/RevelationApplication.java	/^public class RevelationApplication extends RoboApplication{$/;"	c
+SHOWPROGRESS_PHOTO_UPLOAD	app/src/revelation/mobile/MainActivity.java	/^		private final int SHOWPROGRESS_PHOTO_UPLOAD = 2;$/;"	f	class:MainActivity.UploadImageTask	file:
+SLEEP_INTERVAL	test/src/util/Waiter.java	/^  static final int SLEEP_INTERVAL=100;$/;"	f	class:Waiter
+START_PHOTO_UPLOAD	app/src/revelation/mobile/MainActivity.java	/^		private final int START_PHOTO_UPLOAD = 1;$/;"	f	class:MainActivity.UploadImageTask	file:
+StringIO	test/coloredlogcat.py	/^import os, sys, re, StringIO$/;"	i
+TAGTYPES	test/coloredlogcat.py	/^TAGTYPES = {$/;"	v
+TAGTYPE_WIDTH	test/coloredlogcat.py	/^TAGTYPE_WIDTH = 3$/;"	v
+TAG_WIDTH	test/coloredlogcat.py	/^TAG_WIDTH = 20$/;"	v
+UploadImageTask	app/src/revelation/mobile/MainActivity.java	/^	public class UploadImageTask extends AsyncTask<Intent, Float, String> {$/;"	c	class:MainActivity
+Waiter	test/src/util/Waiter.java	/^public class Waiter{$/;"	c
+WebViewClient	app/src/revelation/mobile/MainActivity.java	/^	public class WebViewClient extends android.webkit.WebViewClient {$/;"	c	class:MainActivity
+_tickHandler	app/src/revelation/mobile/util/BackgroundWorker.java	/^  private Runnable _tickHandler; $/;"	f	class:BackgroundWorker	file:
+activity	test/src/revelation/mobile/MainActivityTest.java	/^	MainActivity activity;$/;"	f	class:MainActivityTest
+adb_args	test/coloredlogcat.py	/^adb_args = ' '.join(sys.argv[1:])$/;"	v
+allocate_color	test/coloredlogcat.py	/^def allocate_color(tag):$/;"	f
+app_name	app/gen/revelation/mobile/R.java	/^        public static final int app_name=0x7f050002;$/;"	f	class:R.string
+attr	app/gen/revelation/mobile/R.java	/^    public static final class attr {$/;"	c	class:R
+blue1	app/gen/revelation/mobile/R.java	/^        public static final int blue1=0x7f040004;$/;"	f	class:R.color
+blue2	app/gen/revelation/mobile/R.java	/^        public static final int blue2=0x7f040005;$/;"	f	class:R.color
+buttonRight	app/gen/revelation/mobile/R.java	/^        public static final int buttonRight=0x7f060009;$/;"	f	class:R.id
+buttonRight	app/src/revelation/mobile/MainActivity.java	/^	Button buttonRight;$/;"	f	class:MainActivity
+cameraOpening	app/src/revelation/mobile/MainActivity.java	/^	boolean cameraOpening;$/;"	f	class:MainActivity
+cancel	app/gen/revelation/mobile/R.java	/^        public static final int cancel=0x7f050007;$/;"	f	class:R.string
+color	app/gen/revelation/mobile/R.java	/^    public static final class color {$/;"	c	class:R
+color	test/coloredlogcat.py	/^        color = allocate_color(tag)$/;"	v
+data	test/coloredlogcat.py	/^data = fcntl.ioctl(sys.stdout.fileno(), termios.TIOCGWINSZ, '1234')$/;"	v
+delegate	app/src/revelation/mobile/util/BackgroundWorker.java	/^  private Runnable delegate; $/;"	f	class:BackgroundWorker	file:
+doInBackground	app/src/revelation/mobile/MainActivity.java	/^		protected String doInBackground(Intent... params) {$/;"	m	class:MainActivity.UploadImageTask
+drawable	app/gen/revelation/mobile/R.java	/^    public static final class drawable {$/;"	c	class:R
+evaluate	app/src/revelation/mobile/util/JsLayer.java	/^  public String evaluate(String script){$/;"	m	class:JsLayer
+example_user	app/gen/revelation/mobile/R.java	/^        public static final int example_user=0x7f050001;$/;"	f	class:R.string
+execute	app/src/revelation/mobile/util/JsLayer.java	/^  public void execute(String script){$/;"	m	class:JsLayer
+fcntl	test/coloredlogcat.py	/^import fcntl, termios, struct$/;"	i
+fileLength	app/src/revelation/mobile/MainActivity.java	/^    private long fileLength;$/;"	f	class:MainActivity.UploadImageTask	file:
+format	test/coloredlogcat.py	/^def format(fg=None, bg=None, bright=False, bold=False, dim=False, reset=False):$/;"	f
+getApacheCookieStore	app/src/revelation/mobile/util/NetHelper.java	/^  public static CookieStore getApacheCookieStore(String url){$/;"	m	class:NetHelper
+getField	test/src/revelation/mobile/Reflector.java	/^  public static Object getField(Object o, String name){$/;"	m	class:Reflector
+getFirstImage	app/src/revelation/mobile/ResourceHelper.java	/^  public static Uri getFirstImage(Activity activity){$/;"	m	class:ResourceHelper
+getHomeUrl	app/src/revelation/mobile/MainActivity.java	/^	private String getHomeUrl() {$/;"	m	class:MainActivity	file:
+getIsTicking	app/src/revelation/mobile/util/BackgroundWorker.java	/^  public boolean getIsTicking(){ return ticking; }   $/;"	m	class:BackgroundWorker
+getLastReturnedValue	app/src/revelation/mobile/util/JsLayer.java	/^	protected String getLastReturnedValue() {$/;"	m	class:JsLayer
+getLocalImage	app/src/revelation/mobile/MainActivity.java	/^	private void getLocalImage() {$/;"	m	class:MainActivity	file:
+getMenuItemView	test/src/revelation/mobile/InterfaceHelper.java	/^  public static View getMenuItemView(MenuItem item){$/;"	m	class:InterfaceHelper
+getNormalizedHost	app/src/revelation/mobile/util/NetHelper.java	/^  public static String getNormalizedHost(String host){$/;"	m	class:NetHelper
+getProtocol	app/src/revelation/mobile/MainActivity.java	/^	private String getProtocol() {$/;"	m	class:MainActivity	file:
+getRealPathFromURI	app/src/revelation/mobile/ResourceHelper.java	/^  public static String getRealPathFromURI(Activity activity, Uri contentUri){$/;"	m	class:ResourceHelper
+get_local_image	app/gen/revelation/mobile/R.java	/^        public static final int get_local_image=0x7f050004;$/;"	f	class:R.string
+grey	app/gen/revelation/mobile/R.java	/^        public static final int grey=0x7f040006;$/;"	f	class:R.color
+handler	app/src/revelation/mobile/util/BackgroundWorker.java	/^  private Handler handler; $/;"	f	class:BackgroundWorker	file:
+home_url	app/gen/revelation/mobile/R.java	/^        public static final int home_url=0x7f050000;$/;"	f	class:R.string
+hook	app/src/revelation/mobile/util/JsLayer.java	/^  public void hook(String function, String withCode){$/;"	m	class:JsLayer
+hookCounter	app/src/revelation/mobile/util/JsLayer.java	/^  private int hookCounter = 0;$/;"	f	class:JsLayer	file:
+icon	app/gen/revelation/mobile/R.java	/^        public static final int icon=0x7f020000;$/;"	f	class:R.drawable
+id	app/gen/revelation/mobile/R.java	/^    public static final class id {$/;"	c	class:R
+imageLogo	app/gen/revelation/mobile/R.java	/^        public static final int imageLogo=0x7f06000b;$/;"	f	class:R.id
+imageLogo	app/src/revelation/mobile/MainActivity.java	/^	ImageView imageLogo;$/;"	f	class:MainActivity
+indent_wrap	test/coloredlogcat.py	/^def indent_wrap(message, indent=0, width=80):$/;"	f
+injectAfterOnCreate	app/src/revelation/mobile/util/Interceptor.java	/^  public static void injectAfterOnCreate(Activity activity){$/;"	m	class:Interceptor
+injectBeforeOnCreate	app/src/revelation/mobile/util/Interceptor.java	/^  public static void injectBeforeOnCreate(Activity activity){$/;"	m	class:Interceptor
+input	test/coloredlogcat.py	/^    input = os.popen("adb %s logcat" % adb_args)$/;"	v
+input	test/coloredlogcat.py	/^    input = sys.stdin$/;"	v
+invoke	test/src/revelation/mobile/Reflector.java	/^  public static Object invoke(Object o, String methodName, Object... args){$/;"	m	class:Reflector
+isLoaded	app/src/revelation/mobile/MainActivity.java	/^		public boolean isLoaded() {$/;"	m	class:MainActivity.WebViewClient
+isLoading	app/src/revelation/mobile/MainActivity.java	/^		public boolean isLoading() {$/;"	m	class:MainActivity.WebViewClient
+jsLayer	app/src/revelation/mobile/MainActivity.java	/^	JsLayer jsLayer;$/;"	f	class:MainActivity
+lastMenu	app/src/revelation/mobile/MainActivity.java	/^	ContextMenu lastMenu;$/;"	f	class:MainActivity
+lastReturnedValue	app/src/revelation/mobile/util/JsLayer.java	/^	String lastReturnedValue;$/;"	f	class:JsLayer
+layout	app/gen/revelation/mobile/R.java	/^        public static final int layout=0x7f060000;$/;"	f	class:R.id
+layout	app/gen/revelation/mobile/R.java	/^    public static final class layout {$/;"	c	class:R
+layoutCenter	app/gen/revelation/mobile/R.java	/^        public static final int layoutCenter=0x7f060004;$/;"	f	class:R.id
+layoutContent	app/gen/revelation/mobile/R.java	/^        public static final int layoutContent=0x7f06000a;$/;"	f	class:R.id
+layoutLeft	app/gen/revelation/mobile/R.java	/^        public static final int layoutLeft=0x7f060003;$/;"	f	class:R.id
+layoutLeftGroup	app/gen/revelation/mobile/R.java	/^        public static final int layoutLeftGroup=0x7f060002;$/;"	f	class:R.id
+layoutLoading	app/gen/revelation/mobile/R.java	/^        public static final int layoutLoading=0x7f060007;$/;"	f	class:R.id
+layoutLoading	app/src/revelation/mobile/MainActivity.java	/^	LinearLayout layoutLoading;$/;"	f	class:MainActivity
+layoutRight	app/gen/revelation/mobile/R.java	/^        public static final int layoutRight=0x7f060008;$/;"	f	class:R.id
+layoutTitle	app/gen/revelation/mobile/R.java	/^        public static final int layoutTitle=0x7f060005;$/;"	f	class:R.id
+layoutTitle	app/src/revelation/mobile/MainActivity.java	/^	LinearLayout layoutTitle;$/;"	f	class:MainActivity
+layoutToolbar	app/gen/revelation/mobile/R.java	/^        public static final int layoutToolbar=0x7f060001;$/;"	f	class:R.id
+layoutToolbar	app/src/revelation/mobile/MainActivity.java	/^	LinearLayout layoutToolbar;$/;"	f	class:MainActivity
+line	test/coloredlogcat.py	/^        line = input.readline()$/;"	v
+line	test/coloredlogcat.py	/^        line = linebuf.getvalue()$/;"	v
+linebuf	test/coloredlogcat.py	/^        linebuf = StringIO.StringIO()$/;"	v
+listener	app/src/revelation/mobile/util/CountingMultipartEntity.java	/^        private final ProgressListener listener;$/;"	f	class:CountingMultipartEntity.CountingOutputStream	file:
+listener	app/src/revelation/mobile/util/CountingMultipartEntity.java	/^    private final ProgressListener listener;$/;"	f	class:CountingMultipartEntity	file:
+loaded	app/src/revelation/mobile/MainActivity.java	/^		private boolean loaded;$/;"	f	class:MainActivity.WebViewClient	file:
+loading	app/gen/revelation/mobile/R.java	/^        public static final int loading=0x7f050003;$/;"	f	class:R.string
+loading	app/src/revelation/mobile/MainActivity.java	/^		private boolean loading;$/;"	f	class:MainActivity.WebViewClient	file:
+localImageGetting	app/src/revelation/mobile/MainActivity.java	/^	boolean localImageGetting;$/;"	f	class:MainActivity
+logo	app/gen/revelation/mobile/R.java	/^        public static final int logo=0x7f020001;$/;"	f	class:R.drawable
+main	app/gen/revelation/mobile/R.java	/^        public static final int main=0x7f030000;$/;"	f	class:R.layout
+match	test/coloredlogcat.py	/^    match = retag.match(line)$/;"	v
+message	test/coloredlogcat.py	/^            message = matcher.sub(replace, message)$/;"	v
+message	test/coloredlogcat.py	/^        message = indent_wrap(message, HEADER_SIZE, WIDTH)$/;"	v
+needNewReturnValue	app/src/revelation/mobile/util/JsLayer.java	/^	boolean needNewReturnValue;$/;"	f	class:JsLayer
+onActivityResult	app/src/revelation/mobile/MainActivity.java	/^	public void onActivityResult(int requestCode, int resultCode, Intent data) {$/;"	m	class:MainActivity
+onContextItemSelected	app/src/revelation/mobile/MainActivity.java	/^	public boolean onContextItemSelected(MenuItem item) {$/;"	m	class:MainActivity
+onCreate	app/src/revelation/mobile/MainActivity.java	/^	public void onCreate(Bundle savedInstanceState) {$/;"	m	class:MainActivity
+onCreateContextMenu	app/src/revelation/mobile/MainActivity.java	/^	public void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuInfo) {$/;"	m	class:MainActivity
+onKeyDown	app/src/revelation/mobile/MainActivity.java	/^	public boolean onKeyDown(int keyCode, KeyEvent event) {$/;"	m	class:MainActivity
+onPageFinished	app/src/revelation/mobile/MainActivity.java	/^		public void onPageFinished(WebView view, String url) {$/;"	m	class:MainActivity.WebViewClient
+onPageStarted	app/src/revelation/mobile/MainActivity.java	/^		public void onPageStarted(WebView view, String url, Bitmap favicon) {$/;"	m	class:MainActivity.WebViewClient
+onPostExecute	app/src/revelation/mobile/MainActivity.java	/^		protected void onPostExecute(String photoHtml) {$/;"	m	class:MainActivity.UploadImageTask
+onPreExecute	app/src/revelation/mobile/MainActivity.java	/^    protected void onPreExecute(){$/;"	m	class:MainActivity.UploadImageTask
+onProgressUpdate	app/src/revelation/mobile/MainActivity.java	/^		protected void onProgressUpdate(Float... progress) {$/;"	m	class:MainActivity.UploadImageTask
+openCamera	app/src/revelation/mobile/MainActivity.java	/^	private void openCamera() {$/;"	m	class:MainActivity	file:
+open_camera	app/gen/revelation/mobile/R.java	/^        public static final int open_camera=0x7f050005;$/;"	f	class:R.string
+orange1	app/gen/revelation/mobile/R.java	/^        public static final int orange1=0x7f040002;$/;"	f	class:R.color
+orange2	app/gen/revelation/mobile/R.java	/^        public static final int orange2=0x7f040003;$/;"	f	class:R.color
+os	test/coloredlogcat.py	/^import os, sys, re, StringIO$/;"	i
+owner	test/coloredlogcat.py	/^            owner = owner.strip().center(PROCESS_WIDTH)$/;"	v
+photoUploadUri	app/src/revelation/mobile/MainActivity.java	/^	Uri photoUploadUri;$/;"	f	class:MainActivity
+re	test/coloredlogcat.py	/^import os, sys, re, StringIO$/;"	i
+replace	test/coloredlogcat.py	/^            replace = RULES[matcher]$/;"	v
+retag	test/coloredlogcat.py	/^retag = re.compile("^([A-Z])\/([^\\(]+)\\(([^\\)]+)\\): (.*)$")$/;"	v
+revelation.mobile	app/gen/revelation/mobile/R.java	/^package revelation.mobile;$/;"	p
+revelation.mobile	app/src/revelation/mobile/MainActivity.java	/^package revelation.mobile;$/;"	p
+revelation.mobile	app/src/revelation/mobile/ResourceHelper.java	/^package revelation.mobile;$/;"	p
+revelation.mobile	app/src/revelation/mobile/RevelationApplication.java	/^package revelation.mobile;$/;"	p
+revelation.mobile	test/src/revelation/mobile/InterfaceHelper.java	/^package revelation.mobile;$/;"	p
+revelation.mobile	test/src/revelation/mobile/MainActivityTest.java	/^package revelation.mobile;$/;"	p
+revelation.mobile	test/src/revelation/mobile/Reflector.java	/^package revelation.mobile;$/;"	p
+revelation.mobile	test/src/revelation/mobile/ResourceHelperTest.java	/^package revelation.mobile;$/;"	p
+revelation.mobile.util	app/src/revelation/mobile/util/BackgroundWorker.java	/^package revelation.mobile.util;$/;"	p
+revelation.mobile.util	app/src/revelation/mobile/util/CountingMultipartEntity.java	/^package revelation.mobile.util;$/;"	p
+revelation.mobile.util	app/src/revelation/mobile/util/Interceptor.java	/^package revelation.mobile.util;$/;"	p
+revelation.mobile.util	app/src/revelation/mobile/util/JsLayer.java	/^package revelation.mobile.util;$/;"	p
+revelation.mobile.util	app/src/revelation/mobile/util/NetHelper.java	/^package revelation.mobile.util;$/;"	p
+revelation.mobile.util	test/src/revelation/mobile/util/NetHelperTest.java	/^package revelation.mobile.util;$/;"	p
+setLayoutCenterElementVisible	app/src/revelation/mobile/MainActivity.java	/^		protected void setLayoutCenterElementVisible(LinearLayout element, boolean visible) {$/;"	m	class:MainActivity.WebViewClient
+setLoaded	app/src/revelation/mobile/MainActivity.java	/^		public void setLoaded(boolean loaded) {$/;"	m	class:MainActivity.WebViewClient
+setLoading	app/src/revelation/mobile/MainActivity.java	/^		public void setLoading(boolean loading) {$/;"	m	class:MainActivity.WebViewClient
+setOnTickHandler	app/src/revelation/mobile/util/BackgroundWorker.java	/^  public void setOnTickHandler(Runnable onTickHandler) $/;"	m	class:BackgroundWorker
+setShouldClearCookie	app/src/revelation/mobile/util/Interceptor.java	/^  public static void setShouldClearCookie(boolean s){$/;"	m	class:Interceptor
+setShouldDisableKeyGuard	app/src/revelation/mobile/util/Interceptor.java	/^  public static void setShouldDisableKeyGuard(boolean s){$/;"	m	class:Interceptor
+setUp	test/src/revelation/mobile/MainActivityTest.java	/^	public void setUp() {$/;"	m	class:MainActivityTest
+shouldClearCookie	app/src/revelation/mobile/util/Interceptor.java	/^  static boolean shouldClearCookie;$/;"	f	class:Interceptor
+shouldDisableKeyGuard	app/src/revelation/mobile/util/Interceptor.java	/^  static boolean shouldDisableKeyGuard;$/;"	f	class:Interceptor
+shouldOverrideUrlLoading	app/src/revelation/mobile/MainActivity.java	/^		public boolean shouldOverrideUrlLoading(WebView web, String url) {$/;"	m	class:MainActivity.WebViewClient
+start	app/src/revelation/mobile/util/BackgroundWorker.java	/^  public void start() $/;"	m	class:BackgroundWorker
+start	app/src/revelation/mobile/util/BackgroundWorker.java	/^  public void start(int interval, Runnable onTickHandler) $/;"	m	class:BackgroundWorker
+stop	app/src/revelation/mobile/util/BackgroundWorker.java	/^  public void stop() $/;"	m	class:BackgroundWorker
+strPhotoHMTL	app/src/revelation/mobile/MainActivity.java	/^		private String strPhotoHMTL;$/;"	f	class:MainActivity.UploadImageTask	file:
+string	app/gen/revelation/mobile/R.java	/^    public static final class string {$/;"	c	class:R
+stringFromInputStream	app/src/revelation/mobile/util/NetHelper.java	/^  public static String stringFromInputStream(InputStream is){$/;"	m	class:NetHelper
+struct	test/coloredlogcat.py	/^import fcntl, termios, struct$/;"	i
+sys	test/coloredlogcat.py	/^import os, sys, re, StringIO$/;"	i
+tag	test/coloredlogcat.py	/^        tag = tag.strip()$/;"	v
+tag	test/coloredlogcat.py	/^        tag = tag[-TAG_WIDTH:].rjust(TAG_WIDTH)$/;"	v
+termios	test/coloredlogcat.py	/^import fcntl, termios, struct$/;"	i
+test	app/gen/revelation/mobile/R.java	/^        public static final int test=0x7f030001;$/;"	f	class:R.layout
+testContent	test/src/revelation/mobile/MainActivityTest.java	/^  public void testContent() throws InterruptedException{$/;"	m	class:MainActivityTest
+testGetNormalizedHost	test/src/revelation/mobile/util/NetHelperTest.java	/^  public void testGetNormalizedHost(){$/;"	m	class:NetHelperTest
+testGetRealPathFromURI	test/src/revelation/mobile/ResourceHelperTest.java	/^  public void testGetRealPathFromURI(){$/;"	m	class:ResourceHelperTest
+testLoadingFlagRespondToWebViewEvent	test/src/revelation/mobile/MainActivityTest.java	/^	public void testLoadingFlagRespondToWebViewEvent() {$/;"	m	class:MainActivityTest
+testLoadingIndicator	test/src/revelation/mobile/MainActivityTest.java	/^	public void testLoadingIndicator() throws InterruptedException {$/;"	m	class:MainActivityTest
+testRevelationFlow	test/src/revelation/mobile/MainActivityTest.java	/^	public void testRevelationFlow() throws InterruptedException {$/;"	m	class:MainActivityTest
+testTitle	test/src/revelation/mobile/MainActivityTest.java	/^	public void testTitle() {$/;"	m	class:MainActivityTest
+testUploadFromCamera	test/src/revelation/mobile/MainActivityTest.java	/^  public void testUploadFromCamera() throws InterruptedException{$/;"	m	class:MainActivityTest
+testUploadFromStorageFlow	test/src/revelation/mobile/MainActivityTest.java	/^  public void testUploadFromStorageFlow() throws Throwable{$/;"	m	class:MainActivityTest
+testUri	test/src/revelation/mobile/util/NetHelperTest.java	/^  public void testUri(){$/;"	m	class:NetHelperTest
+testWelcomeLayout	test/src/revelation/mobile/MainActivityTest.java	/^	public void testWelcomeLayout() {$/;"	m	class:MainActivityTest
+textTitle	app/gen/revelation/mobile/R.java	/^        public static final int textTitle=0x7f060006;$/;"	f	class:R.id
+textTitle	app/src/revelation/mobile/MainActivity.java	/^	TextView textTitle;$/;"	f	class:MainActivity
+ticking	app/src/revelation/mobile/util/BackgroundWorker.java	/^  private boolean ticking; $/;"	f	class:BackgroundWorker	file:
+toolbar	app/gen/revelation/mobile/R.java	/^        public static final int toolbar=0x7f020002;$/;"	f	class:R.drawable
+transferred	app/src/revelation/mobile/util/CountingMultipartEntity.java	/^        private long transferred;$/;"	f	class:CountingMultipartEntity.CountingOutputStream	file:
+transferred	app/src/revelation/mobile/util/CountingMultipartEntity.java	/^        void transferred(long num);$/;"	m	interface:CountingMultipartEntity.ProgressListener
+uploadImageTask	app/src/revelation/mobile/MainActivity.java	/^  UploadImageTask uploadImageTask;$/;"	f	class:MainActivity
+upload_image	app/gen/revelation/mobile/R.java	/^        public static final int upload_image=0x7f050006;$/;"	f	class:R.string
+util	test/src/util/Waiter.java	/^package util;$/;"	p
+waitForTrue	test/src/util/Waiter.java	/^  public static void waitForTrue(Callable<Boolean> callable, int waitTime){$/;"	m	class:Waiter
+waitForValue	test/src/util/Waiter.java	/^  public static <T> void waitForValue(Callable<T> callable, T expectedValue, int waitTime){$/;"	m	class:Waiter
+waitForWebViewLoaded	test/src/revelation/mobile/MainActivityTest.java	/^	protected void waitForWebViewLoaded(MainActivity.WebViewClient webViewClient)$/;"	m	class:MainActivityTest
+waitForWebViewReady	test/src/revelation/mobile/MainActivityTest.java	/^	protected void waitForWebViewReady(MainActivity.WebViewClient webViewClient)$/;"	m	class:MainActivityTest
+webView	app/gen/revelation/mobile/R.java	/^        public static final int webView=0x7f06000c;$/;"	f	class:R.id
+webView	app/src/revelation/mobile/MainActivity.java	/^	WebView webView;$/;"	f	class:MainActivity
+webView	app/src/revelation/mobile/util/JsLayer.java	/^  WebView webView;$/;"	f	class:JsLayer
+webViewClient	app/src/revelation/mobile/MainActivity.java	/^	WebViewClient webViewClient;$/;"	f	class:MainActivity
+write	app/src/revelation/mobile/util/CountingMultipartEntity.java	/^        public void write(byte[] b, int off, int len) throws IOException {$/;"	m	class:CountingMultipartEntity.CountingOutputStream
+write	app/src/revelation/mobile/util/CountingMultipartEntity.java	/^        public void write(int b) throws IOException {$/;"	m	class:CountingMultipartEntity.CountingOutputStream
+writeTo	app/src/revelation/mobile/util/CountingMultipartEntity.java	/^    public void writeTo(final OutputStream outstream) throws IOException {$/;"	m	class:CountingMultipartEntity
+yellow1	app/gen/revelation/mobile/R.java	/^        public static final int yellow1=0x7f040000;$/;"	f	class:R.color
+yellow2	app/gen/revelation/mobile/R.java	/^        public static final int yellow2=0x7f040001;$/;"	f	class:R.color

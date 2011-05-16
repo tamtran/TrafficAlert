@@ -1,0 +1,28 @@
+buildscript {
+  repositories {
+    mavenRepo(urls: 'http://jvoegele.com/maven2/')
+  }
+  dependencies {
+    classpath 'com.jvoegele.gradle.plugins:android-plugin:0.9.9'
+  }
+}
+apply plugin: 'android'
+repositories {
+    mavenCentral()
+}
+// Configure a dedicated debug build (3)
+task configureDebug << {
+    jar.classifier = "debug"
+}
+// Configure a dedicated release build (4)
+task configureRelease << {
+    proguard.enabled = true
+}
+
+sourceSets {
+  main {
+    java {
+      srcDir 'src'
+    }
+  }
+}

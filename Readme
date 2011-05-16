@@ -1,0 +1,16 @@
+===Setup sdk.dir
+- Create file common/local.properties (may be copied from common/local.properties.sample) and change sdk.dir to match your sdk path
+===Test process
+- Create app/env/development.properties (mat be copied from development.properties.sample) and change home.url to match your local server address
+- Go to android/app
+- run `ant development` (IMPORTANT, so that environment.xml copied over to res/values/)
+- Either start an AVD or plugin a device (but not both)
+- Run `adb devices` to make sure only one emulator (or device, but not both) connected
+- Make sure a file shall be accessible at content://media/external/images/media/1
+  + This can be achieved on the AVD by go to Camera and hit the button to take a photo
+- Go to android/test
+- Run `ant run-tests`
+
+===Deploy process
+- Go to android/app
+- Run `ant production release`

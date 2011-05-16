@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ivy-module version="1.0">
+    <info organisation="revelation" module="mobile" />
+    <!--  Some JAR files are only needed for compilation and for running unit tests -->
+    <configurations>
+        <conf name="default" transitive="true" visibility="public"/>
+        <conf name="build" extends="default" visibility="public"/>
+    </configurations>
+    <dependencies>
+        <!--  These are only for unit tests -->
+        <dependency org="org.apache.httpcomponents" name="httpmime" rev="4.1.1"/>
+        <dependency org="org.apache.james" name="apache-mime4j" rev="0.6.1"/>
+        <dependency org="org.apache.httpcomponents" name="httpclient" rev="4.1"/>
+        <dependency org="commons-lang" name="commons-lang" rev="2.6"/>
+        <dependency org="commons-io" name="commons-io" rev="2.0.1"/>
+    </dependencies>
+</ivy-module>
+

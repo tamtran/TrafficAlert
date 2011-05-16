@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ivy-module version="1.0">
+    <info organisation="revelation" module="mobile.test" />
+    <!--  Some JAR files are only needed for compilation and for running unit tests -->
+    <configurations defaultconfmapping="*->*,!sources,!javadoc">
+        <conf name="default" transitive="true" visibility="public"/>
+        <conf name="build" extends="default" visibility="public"/>
+    </configurations>
+    <dependencies>
+        <!--  These are only for unit tests -->
+        <dependency org="com.google.code.gson" name="gson" rev="1.7.1">
+          <exclude module="junit"/>
+        </dependency>
+    </dependencies>
+</ivy-module>
+
