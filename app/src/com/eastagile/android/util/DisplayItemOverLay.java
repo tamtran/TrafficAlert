@@ -4,16 +4,16 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Point;
 
-import com.eastagile.android.FriendsExplorerActivity;
+import com.eastagile.android.TrafficAlertActivity;
 import com.google.android.maps.GeoPoint;
 import com.google.android.maps.MapView;
 
 public class DisplayItemOverLay extends com.google.android.maps.Overlay {
-	static FriendsExplorerActivity acti;
+	static TrafficAlertActivity acti;
 	GeoPoint geo;
 	Bitmap bitmap;
 
-	public DisplayItemOverLay(FriendsExplorerActivity friendsExplorerActivity, GeoPoint geoPoint, Bitmap bit) {
+	public DisplayItemOverLay(TrafficAlertActivity friendsExplorerActivity, GeoPoint geoPoint, Bitmap bit) {
 		acti = friendsExplorerActivity;
 		geo = geoPoint;
 		bitmap = bit;

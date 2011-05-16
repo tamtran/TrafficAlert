@@ -32,7 +32,7 @@ import android.telephony.TelephonyManager;
 import android.util.Log;
 
 import com.eastagile.android.DetailAddressActivity;
-import com.eastagile.android.FriendsExplorerActivity;
+import com.eastagile.android.TrafficAlertActivity;
 import com.eastagile.android.R;
 import com.eastagile.android.util.util;
 
@@ -45,13 +45,13 @@ public class AlertService extends Service implements LocationListener {
 	private LocationManager locationManager;
 	private double myCurrentLat;
 	private double myCurrentLong;
-	// static final String HOST = "http://friendexplorer.heroku.com";
+	// static final String HOST = "http://trafficalert.heroku.com";
 	static final String HOST = "http://192.168.25.174:3000";
 	Notification notification;
 	NotificationManager mNotificationManager;
 	PendingIntent contentIntentNoAddress;
 	PendingIntent contentIntentShowAddress;
-	FriendsExplorerActivity friendActivity;
+	TrafficAlertActivity friendActivity;
 	private String[] arrayStringType;
 	private String[] arrayStringLong;
 	private String[] arrayStringLat;
@@ -66,7 +66,7 @@ public class AlertService extends Service implements LocationListener {
 		mNotificationManager = (NotificationManager) getSystemService(ns);
 		long when = System.currentTimeMillis();
 		notification = new Notification(R.drawable.icon, "Traffice Alert Notification", when);
-		Intent notificationIntent = new Intent(this, FriendsExplorerActivity.class);
+		Intent notificationIntent = new Intent(this, TrafficAlertActivity.class);
 		contentIntentNoAddress = PendingIntent.getActivity(this, 0, notificationIntent, 0);
 		notificationIntent = new Intent(this, DetailAddressActivity.class);
 		contentIntentShowAddress = PendingIntent.getActivity(this, 0, notificationIntent, 0);
@@ -187,7 +187,7 @@ public class AlertService extends Service implements LocationListener {
 
 	public int getSettingEnableAlertPre() {
 		SharedPreferences prefs = this.getSharedPreferences(friendActivity.PREFERENCE_NAME, MODE_WORLD_READABLE); // have
-		return prefs.getInt(FriendsExplorerActivity.SETTING_DISABLE_ALERT, 0);
+		return prefs.getInt(TrafficAlertActivity.SETTING_DISABLE_ALERT, 0);
 	}
 	
 	public void putSettingAddPreference() {
