@@ -12,7 +12,7 @@ public class DetailAddressActivity extends Activity{
 	@Override
   protected void onCreate(Bundle savedInstanceState) {
 	  super.onCreate(savedInstanceState);
-	  setContentView(R.layout.demo);
+	  setContentView(R.layout.view);
 	  textShowAddress = (TextView) findViewById(R.id.textShowAddress);
 	  SharedPreferences preSetting = getSharedPreferences(REFERRENCE_SHOW_ADD_NAME, MODE_PRIVATE);
 	  textShowAddress.setText(preSetting.getString(STRING_SHOW_ADD, ""));

@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.test.ActivityInstrumentationTestCase2;
 import android.test.UiThreadTest;
 import android.util.Log;
+import android.view.KeyEvent;
+
 import com.eastagile.android.mock.*;
 
 public class TrafficAlertActivityTest extends ActivityInstrumentationTestCase2<TrafficAlertActivity> {
@@ -27,18 +29,15 @@ public class TrafficAlertActivityTest extends ActivityInstrumentationTestCase2<T
 	  mockOnDisplayLocation = new MockOnDisplayLocation();
 	  setActivityIntent(addEvent);
 	  trafficActivity = (TrafficAlertActivity)getActivity();
-	  
+	  Thread.sleep(5000);
   }
 	
-	@UiThreadTest
 	public void testDisplayMapView() throws InterruptedException{
 		assertNotNull(trafficActivity.mapView);
-		Thread.sleep(5000);
 		assertTrue(trafficActivity.pushpinMineBitMap.getHeight() > 0);
 		assertTrue(trafficActivity.pushpinMineBitMap.getWidth() > 0);
 	}
 	
-	@UiThreadTest
 	public void testDisplayCurrentLocation() throws InterruptedException{
 		testDisplayMapView();
 		logging("" + trafficActivity.myCurrentLat);
@@ -46,6 +45,16 @@ public class TrafficAlertActivityTest extends ActivityInstrumentationTestCase2<T
 		assertEquals(10, (int)trafficActivity.myCurrentLat);
 		assertEquals(100, (int)trafficActivity.myCurrentLong);
 		assertTrue(true);
+	}
+	
+	public void testDisplayOtherFriends() throws InterruptedException{
+		assertNotNull(trafficActivity.mapView);
+		assertTrue(trafficActivity.pushpinFriendBitMap.getHeight() > 0);
+		assertTrue(trafficActivity.pushpinFriendBitMap.getWidth() > 0);
+	}
+
+	public void testDisplayMenuOption() throws InterruptedException{
+		assertNotNull(trafficActivity.getMenuInflater());
 	}
 	
 	public static void logging(String input) {

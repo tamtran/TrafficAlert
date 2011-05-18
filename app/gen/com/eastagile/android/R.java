@@ -15,13 +15,18 @@ public final class R {
         public static final int pushpin=0x7f020001;
     }
     public static final class id {
-        public static final int myMap=0x7f050001;
-        public static final int textShowAddress=0x7f050000;
-        public static final int zoom=0x7f050002;
+        public static final int AboutMenu=0x7f050004;
+        public static final int AlertMenu=0x7f050003;
+        public static final int QuitMenu=0x7f050005;
+        public static final int SettingMenu=0x7f050002;
+        public static final int myMap=0x7f050000;
+        public static final int textShowAddress=0x7f050006;
+        public static final int zoom=0x7f050001;
     }
     public static final class layout {
-        public static final int demo=0x7f030000;
-        public static final int main=0x7f030001;
+        public static final int main=0x7f030000;
+        public static final int menu=0x7f030001;
+        public static final int view=0x7f030002;
     }
     public static final class string {
         public static final int app_name=0x7f040001;

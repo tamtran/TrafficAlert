@@ -36,6 +36,7 @@ import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
@@ -140,8 +141,7 @@ public class TrafficAlertActivity extends MapActivity implements LocationListene
 		androidId = "" + android.provider.Settings.Secure.getString(getContentResolver(), android.provider.Settings.Secure.ANDROID_ID);
 		UUID deviceUuid = new UUID(androidId.hashCode(), ((long) tmDevice.hashCode() << 32) | tmSerial.hashCode());
 		uuid = deviceUuid.toString();
-//		logging("UUID " + uuid);
-		preSetting = getSharedPreferences(PREFERENCE_NAME, MODE_PRIVATE);
+  		preSetting = getSharedPreferences(PREFERENCE_NAME, MODE_PRIVATE);
 		startService(new Intent(AlertService.class.getName()));
 		locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
 		locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 100, 10f, this);
@@ -227,13 +227,14 @@ public class TrafficAlertActivity extends MapActivity implements LocationListene
 
 		@Override
 		protected String doInBackground(Void... arg0) {
-//			logging("doInBackground");
+			logging("doInBackground");
 			String url = HOST + "/user_location/update?name=" + uuid + "&long=" + Double.toString(myCurrentLong) + "&lat=" + Double.toString(myCurrentLat);
 			try {
 				HttpClient client = new DefaultHttpClient();
 				HttpGet method = new HttpGet(url);
 				HttpResponse response = client.execute(method);
 				String stringResponse = util.getResponseBody(response);
+				logging(stringResponse);
 				String[] items = stringResponse.split("<item>");
 				int numberLocation = items.length - 1;
 				if (numberLocation > 0) {
@@ -351,17 +352,15 @@ public class TrafficAlertActivity extends MapActivity implements LocationListene
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		menu.add(0, SETTING, 0, "Setting");
-		menu.add(0, ALERT, 0, "Alert");
-		menu.add(0, ABOUT, 0, "About");
-		menu.add(0, QUIT, 0, "Quit");
+		MenuInflater inflater = getMenuInflater();
+    inflater.inflate(R.layout.menu, menu);
 		return true;
 	}
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
-		case SETTING:
+		case R.id.SettingMenu:
 			final SharedPreferences.Editor edSetting = preSetting.edit();
 			int itemSelectedSetting = preSetting.getInt(SETTING_DISABLE_ALERT, 0);
 			final CharSequence[] alertSetting = { "Enable alert", "Disable alert" };
@@ -381,7 +380,8 @@ public class TrafficAlertActivity extends MapActivity implements LocationListene
 			});
 			settingAlertDialog.create().show();
 			break;
-		case ALERT:
+			
+		case R.id.AlertMenu:
 			final SharedPreferences.Editor edAlert = preSetting.edit();
 			int itemSelectedAlert = preSetting.getInt(SETTING_ALERT_TYPE, 0);
 			final CharSequence[] alertType = { "Traffic", "Cop" };
@@ -397,7 +397,8 @@ public class TrafficAlertActivity extends MapActivity implements LocationListene
 			});
 			alertTypeDialog.create().show();
 			break;
-		case ABOUT:
+			
+		case R.id.AboutMenu:
 			final AlertDialog.Builder builder = new AlertDialog.Builder(this);
 			builder.setMessage(SETTING_ABOUT).setCancelable(false).setPositiveButton("Close", new DialogInterface.OnClickListener() {
 				public void onClick(@SuppressWarnings("unused") final DialogInterface dialog, @SuppressWarnings("unused") final int id) {
@@ -406,7 +407,8 @@ public class TrafficAlertActivity extends MapActivity implements LocationListene
 			});
 			builder.create().show();
 			break;
-		case QUIT:
+			
+		case R.id.QuitMenu:
 			finish();
 		default:
 			break;

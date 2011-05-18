@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title ="Setting" android:id="@+id/SettingMenu" />
+    <item android:title ="Alert" android:id="@+id/AlertMenu"/>
+    <item android:title ="About" android:id="@+id/AboutMenu"/>
+    <item android:title ="Quit" android:id="@+id/QuitMenu"/>
+</menu>
