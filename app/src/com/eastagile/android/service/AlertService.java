@@ -37,7 +37,7 @@ import com.eastagile.android.R;
 import com.eastagile.android.util.util;
 
 public class AlertService extends Service implements LocationListener {
-	private static final String TAG = "Test";
+	private static final String TAG = "Service Logging";
 	private static final int HELLO_ID = 1;
 	private static final int COP_NOTIFY_ID = 2;
 	private static final int TRAFFIC_NOTIFY_ID = 3;
@@ -101,19 +101,19 @@ public class AlertService extends Service implements LocationListener {
 
 	@Override
 	public IBinder onBind(Intent intent) {
-		logging("Service is on Bind");
+//		logging("Service is on Bind");
 		return null;
 	}
 
 	protected void checkAlertFromServer() {
-		logging("Service is on checkAlertFromServer");
+//		logging("Service is on checkAlertFromServer");
 		String url = HOST + "/alert/get?name=" + uuid;
 		try {
 			HttpClient client = new DefaultHttpClient();
 			HttpGet method = new HttpGet(url);
 			HttpResponse response = client.execute(method);
 			String stringResponse = util.getResponseBody(response);
-			logging(stringResponse);
+//			logging(stringResponse);
 			String[] items = stringResponse.split("<item>");
 			int numberLocation = items.length - 1;
 			if (numberLocation > 0) {
@@ -134,7 +134,7 @@ public class AlertService extends Service implements LocationListener {
 			addCop = "";
 			addTraffic = "";
 			if (arrayStringLong != null) {
-				logging("" + arrayStringLong.length);
+//				logging("" + arrayStringLong.length);
 				for (int i = 0; i < arrayStringLong.length; i++) {
 					double lat = Double.parseDouble(arrayStringLat[i]);
 					double lng = Double.parseDouble(arrayStringLong[i]);
@@ -200,7 +200,7 @@ public class AlertService extends Service implements LocationListener {
 		private TimerTask updateTask = new TimerTask() {
 		@Override
 		public void run() {
-			logging("Timer task doing work");
+//			logging("Timer task doing work");
 			if ((haveInternet(AlertService.this)) && (locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER))
 			    && (locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER))) {
 				if (getSettingEnableAlertPre() == 0)
@@ -215,7 +215,7 @@ public class AlertService extends Service implements LocationListener {
 	@Override
 	public void onCreate() {
 		super.onCreate();
-		logging("Service creating");
+//		logging("Service creating");
 		timer = new Timer("GetAlertFromTimer");
 		timer.schedule(updateTask, 10000L, 60 * 1000L);
 	}

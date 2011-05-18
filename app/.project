@@ -30,4 +30,16 @@
 		<nature>com.android.ide.eclipse.adt.AndroidNature</nature>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>android</name>
+			<type>2</type>
+			<location>/Users/eastagile/Desktop/TrafficAlert/test/src/com/eastagile/android</location>
+		</link>
+		<link>
+			<name>test</name>
+			<type>2</type>
+			<location>/Users/eastagile/TamTran/Coding/Eclipse/HelloWorld/test</location>
+		</link>
+	</linkedResources>
 </projectDescription>

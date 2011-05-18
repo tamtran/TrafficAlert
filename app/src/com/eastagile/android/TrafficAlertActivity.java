@@ -44,6 +44,7 @@ import android.widget.LinearLayout;
 import android.widget.LinearLayout.LayoutParams;
 import android.widget.Toast;
 
+import com.eastagile.android.mock.MockOnDisplayLocation;
 import com.eastagile.android.service.AlertService;
 import com.eastagile.android.util.DisplayItemOverLay;
 import com.eastagile.android.util.util;
@@ -55,40 +56,66 @@ import com.google.android.maps.Overlay;
 
 public class TrafficAlertActivity extends MapActivity implements LocationListener {
 	int REQUEST_GPS_CODE = 0;
-	public static final String tag = "Test";
+	public static final String tag = "Activity Logging";
 	public static final String SETTING_DISABLE_ALERT = "Traffic Alert-Setting";
 	public static final String SETTING_ALERT_TYPE = "Traffic Alert-Alert-Type";
 	public static final String SETTING_ABOUT = "A product of East Agile company \n http://www.eastagile.com ";
-	
+
 	public static final String PREFERENCE_NAME = "Preference Setting for Traffic Alert";
 	// static final String HOST = "http://trafficalert.heroku.com";
-	static final String HOST = "http://192.168.25.174:3000";
+	public static final String HOST = "http://192.168.25.174:3000";
 	public static MapView mapView;
-	static MapController mapController;
-	static GeoPoint myCurrentGeoPoint;
-	static LocationManager locationManager;
-	StringBuilder sb;
-	int noOfFixes = 0;
-	double myCurrentLat;
-	double myCurrentLong;
-	String uuid;
-	String[] arrayStringName;
-	String[] arrayStringLong;
-	String[] arrayStringLat;
-	List<Overlay> listOfOverlays;
-	DisplayLocationTask displayLocationTask;
-	Boolean continueRunning = true;
+	public static MapController mapController;
+	public static GeoPoint myCurrentGeoPoint;
+	public static LocationManager locationManager;
+	public StringBuilder sb;
+	public int noOfFixes = 0;
+	public double myCurrentLat;
+	public double myCurrentLong;
+	public String uuid;
+	public String[] arrayStringName;
+	public String[] arrayStringLong;
+	public String[] arrayStringLat;
+	public List<Overlay> listOfOverlays;
+	public DisplayLocationTask displayLocationTask;
+	public Boolean continueRunning = true;
 	private static final int SETTING = 0;
 	private static final int ALERT = 1;
 	private static final int ABOUT = 2;
 	private static final int QUIT = 3;
-	Timer timer;
-	SharedPreferences preSetting;
+	public Timer timer;
+	public SharedPreferences preSetting;
+	public Bitmap pushpinMineBitMap;
+	public Bitmap pushpinFriendBitMap;
+	public String classmockOnDisplayLocationName = "";
 
+	public static class OnDisplayLocation {
+		private static TrafficAlertActivity trafficAct;
+		public OnDisplayLocation(TrafficAlertActivity mapAct) {
+			trafficAct = (TrafficAlertActivity) mapAct;
+		}
+
+		public Location callGetCurrentLocation() {
+			logging("OnDisplayLocation callGetCurrentLocation");
+			Location local = trafficAct.locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
+			return local;
+		}
+	}
+	public OnDisplayLocation onDisplayLocation = new OnDisplayLocation(this);
+	MockOnDisplayLocation mockOnDisplayLocation;
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		Log.d("Test", "I already reach there");
+		logging("onCreate");
+		Bundle extras = getIntent().getExtras();
+	  if (extras!=null) {
+	    classmockOnDisplayLocationName = extras.getString("MockOnDisplayLocation").toLowerCase();
+	    logging("onCreate className " + classmockOnDisplayLocationName);
+	    if (classmockOnDisplayLocationName.equals("yes")) {
+		    mockOnDisplayLocation = new MockOnDisplayLocation();
+		    onDisplayLocation = mockOnDisplayLocation;
+	    }
+    }
 		setContentView(R.layout.main);
 		// launchGPSOptions();
 		mapView = (MapView) findViewById(R.id.myMap);
@@ -113,7 +140,7 @@ public class TrafficAlertActivity extends MapActivity implements LocationListene
 		androidId = "" + android.provider.Settings.Secure.getString(getContentResolver(), android.provider.Settings.Secure.ANDROID_ID);
 		UUID deviceUuid = new UUID(androidId.hashCode(), ((long) tmDevice.hashCode() << 32) | tmSerial.hashCode());
 		uuid = deviceUuid.toString();
-		logging("UUID " + uuid);
+//		logging("UUID " + uuid);
 		preSetting = getSharedPreferences(PREFERENCE_NAME, MODE_PRIVATE);
 		startService(new Intent(AlertService.class.getName()));
 		locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
@@ -127,9 +154,13 @@ public class TrafficAlertActivity extends MapActivity implements LocationListene
 	private void checkLocationAndAction() {
 		if ((locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) && (locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER))
 		    && (haveInternet(this))) {
-			Location loc = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+//			 Location loc =
+//			 locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+			Location loc = onDisplayLocation.callGetCurrentLocation();
 			if (loc == null) {
-				loc = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
+				// loc =
+				// locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
+				loc = onDisplayLocation.callGetCurrentLocation();
 			}
 			myCurrentLat = loc.getLatitude();
 			myCurrentLong = loc.getLongitude();
@@ -196,7 +227,7 @@ public class TrafficAlertActivity extends MapActivity implements LocationListene
 
 		@Override
 		protected String doInBackground(Void... arg0) {
-			logging("doInBackground");
+//			logging("doInBackground");
 			String url = HOST + "/user_location/update?name=" + uuid + "&long=" + Double.toString(myCurrentLong) + "&lat=" + Double.toString(myCurrentLat);
 			try {
 				HttpClient client = new DefaultHttpClient();
@@ -216,19 +247,19 @@ public class TrafficAlertActivity extends MapActivity implements LocationListene
 					}
 				}
 				listOfOverlays.clear();
-				Bitmap bit = getBitmapFromAsset("pushpinFriend.gif");
+				pushpinFriendBitMap = getBitmapFromAsset("pushpinFriend.gif");
 				if (arrayStringLong != null) {
 					for (int i = 0; i < arrayStringLong.length; i++) {
 						double lat = Double.parseDouble(arrayStringLat[i]);
 						double lng = Double.parseDouble(arrayStringLong[i]);
 						GeoPoint geoPoint = new GeoPoint((int) (lat * 1E6), (int) (lng * 1E6));
-						DisplayItemOverLay mapOverlayFriend = new DisplayItemOverLay(TrafficAlertActivity.this, geoPoint, bit);
+						DisplayItemOverLay mapOverlayFriend = new DisplayItemOverLay(TrafficAlertActivity.this, geoPoint, pushpinFriendBitMap);
 						listOfOverlays.add(mapOverlayFriend);
 					}
 				}
 				myCurrentGeoPoint = new GeoPoint((int) (myCurrentLat * 1E6), (int) (myCurrentLong * 1E6));
-				bit = getBitmapFromAsset("pushpin.gif");
-				DisplayItemOverLay mapOverlayMe = new DisplayItemOverLay(TrafficAlertActivity.this, myCurrentGeoPoint, bit);
+				pushpinMineBitMap = getBitmapFromAsset("pushpin.gif");
+				DisplayItemOverLay mapOverlayMe = new DisplayItemOverLay(TrafficAlertActivity.this, myCurrentGeoPoint, pushpinMineBitMap);
 				listOfOverlays.add(mapOverlayMe);
 				publishProgress(0);
 			} catch (Exception ex) {
@@ -240,10 +271,18 @@ public class TrafficAlertActivity extends MapActivity implements LocationListene
 
 	@Override
 	public void onLocationChanged(Location location) {
-		myCurrentLat = location.getLatitude();
-		myCurrentLong = location.getLongitude();
-		myCurrentGeoPoint = new GeoPoint((int) (myCurrentLat * 1E6), (int) (myCurrentLong * 1E6));
-		updateMyLocation();
+		logging("onLocationChanged");
+		if(location!=null){
+			if(classmockOnDisplayLocationName.equals("yes")){
+				myCurrentLat = onDisplayLocation.callGetCurrentLocation().getLatitude();
+				myCurrentLong = onDisplayLocation.callGetCurrentLocation().getLongitude();
+			}else{
+				myCurrentLat = location.getLatitude();
+				myCurrentLong = location.getLongitude();
+			}
+			myCurrentGeoPoint = new GeoPoint((int) (myCurrentLat * 1E6), (int) (myCurrentLong * 1E6));
+			updateMyLocation();
+		}
 		sb = new StringBuilder(512);
 		noOfFixes++;
 		sb.append("No. of Fixes: ");
@@ -360,12 +399,11 @@ public class TrafficAlertActivity extends MapActivity implements LocationListene
 			break;
 		case ABOUT:
 			final AlertDialog.Builder builder = new AlertDialog.Builder(this);
-			builder.setMessage(SETTING_ABOUT).setCancelable(false)
-			    .setPositiveButton("Close", new DialogInterface.OnClickListener() {
-				    public void onClick(@SuppressWarnings("unused") final DialogInterface dialog, @SuppressWarnings("unused") final int id) {
-					    dialog.cancel();
-				    }
-			    });
+			builder.setMessage(SETTING_ABOUT).setCancelable(false).setPositiveButton("Close", new DialogInterface.OnClickListener() {
+				public void onClick(@SuppressWarnings("unused") final DialogInterface dialog, @SuppressWarnings("unused") final int id) {
+					dialog.cancel();
+				}
+			});
 			builder.create().show();
 			break;
 		case QUIT:
@@ -379,7 +417,7 @@ public class TrafficAlertActivity extends MapActivity implements LocationListene
 	protected void sendAlertToServer(CharSequence charSequence) {
 		String url = HOST + "/alert/receive?name=" + uuid + "&long=" + Double.toString(myCurrentLong) + "&lat=" + Double.toString(myCurrentLat) + "&type="
 		    + charSequence.toString();
-		logging(url);
+//		logging(url);
 		try {
 			HttpClient client = new DefaultHttpClient();
 			HttpGet method = new HttpGet(url);
